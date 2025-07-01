@@ -1,0 +1,29 @@
+server:
+  port: 8083
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/homes
+    username: root
+    password: Ec@13675302
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    hikari:
+      connection-timeout: 30000
+      maximum-pool-size: 10
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.springframework.jdbc.datasource: DEBUG
