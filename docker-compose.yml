@@ -27,9 +27,11 @@ services:
 #      mysql:
 #        condition: service_healthy
     environment:
-      DATABASE_URL: jdbc:mysql://192.168.1.12:3306/homes
+      DATABASE_URL: jdbc:mysql://$${MYSQL_HOST:host.docker.internal}:3306/homes
       DATABASE_USERNAME: yegonc
       DATABASE_PASSWORD: Ez@1234567
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     networks:
       - classicmodels-network
 
