@@ -1,0 +1,41 @@
+
+services:
+#  mysql:
+#    image: mysql:8.0
+#    container_name: classicmodels-mysql
+#    environment:
+#      MYSQL_ROOT_PASSWORD: Ec@13675302
+#      MYSQL_DATABASE: homes
+#    ports:
+#      - "3306:3306"
+#    volumes:
+#      - mysql_data:/var/lib/mysql
+#    networks:
+#      - classicmodels-network
+#    healthcheck:
+#      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-pEc@13675302"]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
+
+  app:
+    build: .
+    container_name: classic
+    ports:
+      - "8083:8083"
+#    depends_on:
+#      mysql:
+#        condition: service_healthy
+    environment:
+      DATABASE_URL: jdbc:mysql://192.168.1.12:3306/homes
+      DATABASE_USERNAME: yegonc
+      DATABASE_PASSWORD: Ez@1234567
+    networks:
+      - classicmodels-network
+
+#volumes:
+#  mysql_data:
+
+networks:
+  classicmodels-network:
+    driver: bridge
