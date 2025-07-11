@@ -60,6 +60,7 @@
 <!--            <version>8.0.33</version> &lt;!&ndash; Use the latest stable version &ndash;&gt;-->
 <!--            <scope>runtime</scope>-->
 <!--        </dependency>-->
+
     </dependencies>
 
     <build>
